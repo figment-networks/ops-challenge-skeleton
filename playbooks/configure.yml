@@ -1,0 +1,7 @@
+---
+- name: Configure Servers
+  hosts: all
+  gather_facts: no
+  become: yes
+  roles:
+    - cosmos
