@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 ANSIBLE_CONFIG=config/ansible.cfg \
-ansible-playbook playbooks/configure.yml "$@"
+ansible-playbook playbooks/cosmos.yml "$@"
