@@ -1,3 +1,4 @@
 .python-version
 *.retry
 **/*/__pycache__/**/*
+config/inventory.ini
