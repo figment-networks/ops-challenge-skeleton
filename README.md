@@ -24,6 +24,10 @@ Run your playbook:
 
     bin/provision
 
+You should be able to SSH into the server as `figment`, if needed:
+
+    ssh figment@1.2.3.4
+
 
 ## Requirements
 
