@@ -31,7 +31,7 @@ You should be able to SSH into the server as `figment`, if needed:
 
 ## Requirements
 
-Write an ansible role which deploys a [Cosmos mainnet (Hub 3) node](https://hub.cosmos.network/master/gaia-tutorials/join-mainnet.html) to the server in the inventory.
+Write an ansible role which deploys a [Cosmos mainnet (Hub 4) node](https://hub.cosmos.network/main/gaia-tutorials/join-mainnet.html) to the server in the inventory.
 
 Keep these important aspects in mind:
 
@@ -39,12 +39,11 @@ Keep these important aspects in mind:
 - **Configurability** - it'd be nice to be able to set useful options in variables (for example a list of persistent peers)
 - **Resiliency** - the node should be run as a systemd service which will restart after crashes
 
-To avoid having to build binaries on the server, use our existing S3 bucket with appropriate versions of pre-built binaries as well as the genesis file needed to initialise the node:
+To avoid having to build binaries on the server, use our existing S3 bucket with an appropriate pre-built binary as well as the genesis file needed to initialise the node:
 
 | URL                                                                                                 |
 |-----------------------------------------------------------------------------------------------------|
-| https://figment-provisioning.s3.ca-central-1.amazonaws.com/cosmos/gaiad2_0_8                        |
-| https://figment-provisioning.s3.ca-central-1.amazonaws.com/cosmos/gaiacli2_0_8                      |
-| https://figment-provisioning.s3.ca-central-1.amazonaws.com/cosmos/genesis/genesis--cosmoshub-3.json |
+| https://figment-provisioning.s3.ca-central-1.amazonaws.com/cosmos/gaiad5_0_0                        |
+| https://figment-provisioning.s3.ca-central-1.amazonaws.com/cosmos/genesis/genesis--cosmoshub-4.json |
 
 Once you've got the node syncing, prove it! Write a simple monitoring script in Python, also deployed via ansible and also a systemd service. It should retrieve the latest block height synced by the node (pst, [check this out](https://docs.tendermint.com/master/rpc/)) and report it as a gauge to the local StatsD server (UDP 8125) every 10 seconds. Prefix your metric name with `figment_ops_challenge.<your github username>`. What other metrics might you report on?
