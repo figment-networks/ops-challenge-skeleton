@@ -49,6 +49,7 @@ Write an ansible role which deploys a [Cosmos mainnet (Hub 4) node](https://gith
 The role should:
 - Build the required binary from source
 - Init a new node
+- Provide the ability to update the binary in future if required
 
 Keep these important aspects in mind:
 
