@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  ops-challenge:
+    image: figmentnetworks/ops-challenge-skeleton:latest
+    tmpfs:
+      - /tmp
+      - /run
+      - /run/lock
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./:/tmp/ansible
