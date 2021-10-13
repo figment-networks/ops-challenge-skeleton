@@ -2,6 +2,10 @@
 
 Hello there! This challenge involves bootstraping and monitoring a new [Cosmos](https://cosmos.network/) node using Docker. We've set up this simple skeleton repo to give you a starting point. Feel free to modify any of this how you see fit!
 
+While the use of Docker and Ansible here might look like an odd choice it's only for ease of use during the tech test.  Docker in this case gives a prebuilt env with all the tools needed for ansible to run as well as handling ambiguities of architecture.  In our actual systems we are using Ansible with both bare metal servers and VMs.
+
+**If you have an M1 Mac you will need to make sure you have the latest version of Docker Desktop as x86_64 compatablity is required**
+
 Download the zip of this repo, carefully read and follow the below outline, then send us a zip of your solution.
 
 
